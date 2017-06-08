@@ -24,10 +24,14 @@
 <script>
     export default {
         methods: {
-            ...Vuex.mapActions(["logout"])
+            logout() {
+                this.$store.dispatch('logout')
+            }
         },
         computed: {
-            ...Vuex.mapGetters(["isLoggedIn"])
+            isLoggedIn() {
+                return this.$store.getters.isLoggedIn;
+            }
         }
     }
 </script>

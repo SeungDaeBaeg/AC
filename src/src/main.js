@@ -1,12 +1,11 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import VueI18n from 'vue-i18n'
+
 import store from './store.js'
 import routes from './routes.js'
 import App from './app.vue'
 
-Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(VueI18n);
 

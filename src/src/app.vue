@@ -1,10 +1,10 @@
 <i18n>
 {
     "ko": {
-        "page-title": "링크프라이스 어필레이트 센터",
+        "page-title": "링크프라이스 어필레이트 센터"
     },
     "en": {
-        "page-title": "Linkprice Affiliate Center",
+        "page-title": "Linkprice Affiliate Center"
     }
 }
 </i18n>
@@ -23,16 +23,10 @@ import AcHeader from './components/header.vue';
 import AcFooter from './components/footer.vue';
 
 export default {
-    name: 'app',
     components: [
         AcHeader,
         AcFooter
-    ],
-    data() {
-        return {
-            msg: 'Welcome to Your Vue.js App'
-        }
-    }
+    ]
 }
 </script>
 
