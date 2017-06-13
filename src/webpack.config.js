@@ -1,12 +1,15 @@
 let path = require('path');
 let webpack = require('webpack');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
+let CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 module.exports = {
-    entry: './src/main.js',
+    entry: './vue/main.js',
     output: {
         path: path.resolve(__dirname, '../public'),
-        filename: 'ac.js'
+        filename: 'ac.js',
+        chunkFilename: 'js/ac.[id].js'
     },
     module: {
         rules: [
@@ -14,9 +17,12 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
-                    extractCSS: true,
                     loaders: {
-                        i18n: '@kazupon/vue-i18n-loader'
+                        i18n: '@kazupon/vue-i18n-loader',
+                        sass: ExtractTextPlugin.extract({
+                            use: ['css-loader', 'sass-loader'],
+                            fallback: 'vue-style-loader'
+                        })
                     }
                 }
             },
@@ -28,14 +34,21 @@ module.exports = {
                     presets: [['es2015', {modules: false}]],
                     plugins: ['syntax-dynamic-import']
                 }
-            },
+            }
+            /*
+            ,
             {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]?[hash]'
                 }
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+                loader: 'file-loader'
             }
+            */
         ]
     },
     resolve: {
@@ -50,29 +63,32 @@ module.exports = {
     performance: {
         hints: false
     },
-    plugins: [
-        new ExtractTextPlugin("ac.css")
-    ],
     devtool: '#eval-source-map'
 };
 
 if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map';
-    // http://vue-loader.vuejs.org/en/workflow/production.html
+    module.exports.devtool = false;
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
             'process.env': {
-            NODE_ENV: '"production"'
-        }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-        sourceMap: true,
-        compress: {
-            warnings: false
-        }
-    }),
-    new webpack.LoaderOptionsPlugin({
-        minimize: true
-    })
+                NODE_ENV: '"production"'
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true,
+            compress: {
+                warnings: false
+            }
+        }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        }),
+        new ExtractTextPlugin({
+            filename: 'css/ac.css'
+        }),
+        new CopyWebpackPlugin([
+            {from: 'index.html'},
+            {from: 'node_modules/element-ui/lib/theme-default/index.css', to:'css/element.css'}
+        ])
   ])
 }
