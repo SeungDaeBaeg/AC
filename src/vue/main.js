@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import VueI18n from 'vue-i18n'
 import VueProgressBar from 'vue-progressbar'
 import ElementUI from 'element-ui'
+import axios from 'axios'
 
 import store from './store.js'
 import routes from './routes.js'
@@ -13,10 +14,15 @@ Vue.use(VueI18n);
 Vue.use(VueProgressBar);
 Vue.use(ElementUI);
 
+Vue.prototype.$http = axios;
+
+
+store.dispatch('detectLang');
 const i18n = new VueI18n({
-    locale: 'ko',
+    locale: store.getters.selectedLang,
     fallback: 'ko'
 });
+
 
 let router = new VueRouter({
     mode: 'history',

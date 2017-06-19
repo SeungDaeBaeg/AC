@@ -16,9 +16,9 @@
 <template>
     <header class="header" role="banner">
         <div class="container">
-            <router-link to="/">{{ $t('home') }}</router-link>
-            <router-link to="/login" v-if="!isLoggedIn">{{ $t('login') }}</router-link>
-            <a href="#" v-if="isLoggedIn" @click.prevent="logout">{{ $t('logout') }}</a>
+            <router-link to="/">{{ $t("home") }}</router-link>
+            <router-link to="/login" v-if="!isLoggedIn">{{ $t("login") }}</router-link>
+            <a href="#" v-if="isLoggedIn" @click.prevent="logout">{{ $t("logout") }}</a>
         </div>
     </header>
 </template>

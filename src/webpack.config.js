@@ -3,6 +3,7 @@ let webpack = require('webpack');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 let CopyWebpackPlugin = require('copy-webpack-plugin');
 
+require('es6-promise').polyfill();
 
 module.exports = {
     entry: './vue/main.js',

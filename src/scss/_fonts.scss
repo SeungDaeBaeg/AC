@@ -1,0 +1,57 @@
+/********************
+ * 나눔스퀘어
+ */
+@font-face {
+    font-family: 'NanumSquare';
+    src: url(/fonts/NanumSquare.eot);
+    src: local('Nanum Square'),
+         local('NanumSquare'),
+         local('NanumSquareR'),
+         url(/fonts/NanumSquare.eot?#iefix) format('embedded-opentype'),
+         url(/fonts/NanumSquare.woff) format('woff'),
+         url(/fonts/NanumSquare.ttf) format('truetype');
+}
+
+
+
+/********************
+ * 나눔바른고딕
+ */
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/NanumBarunGothic.eot);
+    src: local('Nanum Barun Gothic'),
+         local('NanumBarunGothic'),
+         url(/fonts/NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
+         url(/fonts/NanumBarunGothic.woff2) format('woff2'),
+         url(/fonts/NanumBarunGothic.woff) format('woff'),
+         url(/fonts/NanumBarunGothic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url(/fonts/NanumBarunGothicBold.eot);
+    src: local('Nanum Barun Gothic Bold'),
+         local('NanumBarunGothicBold'),
+         url(/fonts/NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
+         url(/fonts/NanumBarunGothicBold.woff2) format('woff2'),
+         url(/fonts/NanumBarunGothicBold.woff) format('woff'),
+         url(/fonts/NanumBarunGothicBold.ttf) format('truetype');
+}
+
+
+.font-title {
+    font-family: 'NanumSquare', serif;
+}
+
+.font-normal {
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+body {
+    font-family: 'NanumBarunGothic', sans-serif;
+}

@@ -1,14 +1,3 @@
-<i18n>
-{
-    "ko": {
-        "page-title": "링크프라이스 어필레이트 센터"
-    },
-    "en": {
-        "page-title": "Linkprice Affiliate Center"
-    }
-}
-</i18n>
-
 <template>
     <div id="app">
         <vue-progress-bar></vue-progress-bar>
@@ -21,6 +10,20 @@
         <ac-footer></ac-footer>
     </div>
 </template>
+
+
+
+<style lang="scss">
+    @import '../scss/normalize';
+    @import '../scss/container';
+    @import '../scss/fonts';
+
+    #app {
+        margin-top: 4px;
+    }
+</style>
+
+
 
 <script>
 import AcHeader from './components/header.vue';
@@ -51,11 +54,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import '../scss/normalize';
-@import '../scss/container';
 
-#app {
-    margin-top: 4px;
-}
-</style>
