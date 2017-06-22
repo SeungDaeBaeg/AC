@@ -3,11 +3,16 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
+
+
 const state = {
     isLoggedIn: localStorage.getItem("token"),
     selectedLang: localStorage.getItem("selectedLang"),
-    supportedLang: ["ko", "en"]
+    supportedLang: ["ko", "en"],
+    selectedSite: localStorage.getItem("selectedSite")
 };
+
+
 
 const mutations = {
     LOGIN(state) {
@@ -22,8 +27,12 @@ const mutations = {
     },
     SET_LANG(state, {lang}) {
         state.selectedLang = lang;
+    },
+    SET_SITE(state, {site}) {
+        state.selectedSite = site;
     }
 };
+
 
 
 const actions = {
@@ -59,6 +68,7 @@ const actions = {
 
     // 페이지에서 언어 변경을 선택했을 경우 이 함수 호출
     // 로컬스토리지에 저장된 값의 유무에 상관없이 무조건 lang 값으로 커밋
+    // lang은 ko 또는 en, 현재는 이 2가지만 지원
     // 커밋후에 로케일도 변경
     setLang({state, commit}, lang) {
         if (state.supportedLang.indexOf(lang) === -1) {
@@ -69,8 +79,17 @@ const actions = {
         commit("SET_LANG", {lang: lang});
 
         location.reload();
+    },
+
+    // 어필사이트를 변경한다
+    // site 변수는 affiliate_id를 사용한다. 예) A123456789
+    setSite({commit}, site) {
+        localStorage.setItem("selectedSite", site);
+        commit("SET_SITE", {site: site});
     }
 };
+
+
 
 const getters = {
     isLoggedIn: state => {
@@ -80,6 +99,8 @@ const getters = {
         return state.selectedLang;
     }
 };
+
+
 
 export default new Vuex.Store({
     state,

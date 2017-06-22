@@ -36,22 +36,17 @@ module.exports = {
                     plugins: ['syntax-dynamic-import']
                 }
             }
-            /*
-            ,
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]?[hash]'
-                }
-            },
-            {
-                test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-                loader: 'file-loader'
-            }
-            */
         ]
     },
+    plugins: [
+        new ExtractTextPlugin({
+            filename: 'css/ac.css'
+        }),
+        new CopyWebpackPlugin([
+            {from: 'index.html'},
+            {from: 'node_modules/element-ui/lib/theme-default/index.css', to:'css/element.css'}
+        ])
+    ],
     resolve: {
         alias: {
             'vue$': 'vue/dist/vue.esm.js'
@@ -83,13 +78,6 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
-        }),
-        new ExtractTextPlugin({
-            filename: 'css/ac.css'
-        }),
-        new CopyWebpackPlugin([
-            {from: 'index.html'},
-            {from: 'node_modules/element-ui/lib/theme-default/index.css', to:'css/element.css'}
-        ])
+        })
   ])
 }

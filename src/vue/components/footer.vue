@@ -1,21 +1,23 @@
 <i18n>
-{
-    "ko": {
-        "ko": "한국어",
-        "en": "영어",
-        "about-us": "회사소개",
-        "privacy": "개인정보보호정책",
-        "agreement": "이용약관"
-    },
-    "en": {
-        "ko": "Korean",
-        "en": "English",
-        "about-us": "About Us",
-        "privacy": "Privacy",
-        "agreement": "Agreement"
+    {
+        "ko": {
+            "ko": "Korean",
+            "en": "English",
+            "about-us": "회사소개",
+            "privacy": "개인정보보호정책",
+            "agreement": "이용약관"
+        },
+        "en": {
+            "ko": "한국어",
+            "en": "영어",
+            "about-us": "About Us",
+            "privacy": "Privacy",
+            "agreement": "Agreement"
+        }
     }
-}
 </i18n>
+
+
 
 <template>
     <footer class="footer" role="contentinfo">
@@ -35,8 +37,12 @@
 
 
 
-<script>
+<style lang="scss">
+</style>
 
+
+
+<script>
 export default {
     methods: {
         setLang(lang) {

@@ -14,12 +14,18 @@
 
 
 <style lang="scss">
+    @import '../node_modules/vue2-animate/dist/vue2-animate.min.css';
     @import '../scss/normalize';
     @import '../scss/container';
     @import '../scss/fonts';
+    @import '../scss/common';
 
     #app {
-        margin-top: 4px;
+        margin-top: 0;
+    }
+
+    #content {
+        background-color: #f5f5f5;
     }
 </style>
 

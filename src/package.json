@@ -15,6 +15,8 @@
     "vue-i18n": "^7.0.1",
     "vue-progressbar": "^0.7.2",
     "vue-router": "^2.5.3",
+    "vue-scroll-behavior": "^0.1.5",
+    "vue2-animate": "^1.0.4",
     "vuex": "^2.3.1"
   },
   "devDependencies": {

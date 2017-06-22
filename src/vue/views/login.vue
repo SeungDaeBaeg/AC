@@ -1,10 +1,24 @@
+<i18n>
+    {
+        "ko": {
+        },
+        "en": {
+        }
+    }
+</i18n>
+
 <template>
-    <form @submit.prevent="login()">
-        <input type="text" placeholder="ID" v-model="id">
-        <input type="password" placeholder="Password" v-model="pw">
-        <button type="submit">Login</button>
-    </form>
+    <div class="main-view">
+        <form @submit.prevent="login()">
+            <input type="text" placeholder="ID" v-model="id">
+            <input type="password" placeholder="Password" v-model="pw">
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </template>
+
+<style lang="scss">
+</style>
 
 <script>
     export default {
