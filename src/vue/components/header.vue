@@ -31,12 +31,15 @@
     <header class="header" role="banner" :style="headerStyle">
         <div class="container">
             <el-row class="top-banner">
-                <el-col :span="24">
-                    <img src="/images/top_banner_pc.png" class="img-fluid" @load="onResize()">
+                <el-col :span="24" v-if="topBanner">
+                    <a href="topBanner.targetUrl">
+                        <img :src="topBanner.imageForPc" class="img-fluid" @load="onResize()">
+                    </a>
                 </el-col>
+                <el-col :span="24" class="top-line" v-if="!topBanner"></el-col>
             </el-row>
             <el-row class="top-bar">
-                <span>메시지 <router-link to="/messages">{{ new_mail }}</router-link> 통</span>
+                <span>메시지 <router-link to="/messages">{{ newMailCount }}</router-link> 통</span>
                 <a href="//helpdesk.linkprice.com">{{ $t("helpdesk") }}</a>
                 <router-link to="/login" v-if="!isLoggedIn">{{ $t("login") }}</router-link>
                 <a href="#" v-if="isLoggedIn" @click.prevent="logout">{{ $t("logout") }}</a>
@@ -55,7 +58,7 @@
                 </el-col>
                 <el-col :span="6"></el-col>
             </el-row>
-            <div class="position">{{ top }}</div>
+            <div class="position">{{ scrollDownFromTop }}</div>
         </div>
     </header>
 </template>
@@ -63,6 +66,10 @@
 
 
 <style lang="scss">
+    .top-line {
+        border: 4px solid #33c;
+    }
+
     .header {
         overflow: hidden;
         position: fixed;
@@ -76,10 +83,16 @@
     .top-bar {
         text-align: right;
         font-size: 14px;
-        padding: 4px;
+        padding: 8px;
     }
 
     .top-main {
+        .logo {
+            width: 150px;
+            &.is-scrolled {
+                width: 120px;
+            }
+        }
         .navbar {
             padding-top: 20px;
             font-size: 18px;
@@ -102,14 +115,16 @@
     export default {
         data() {
             return {
-                top_banner: {
-                    img: '',
-                    url: ''
+                topBanner: {
+                    imageForPc: '/images/top_banner_pc.png',
+                    imageForMobile: '/images/top_banner_mobile.png',
+                    targetUrl: ''
                 },
-                new_mail: 30,
+                newMailCount: 30,
                 headerHeight: 200,
                 bannerHeight: 79,
-                top: 0,
+                scrollDownFromTop: 0,
+                isScrolled: false,
                 headerStyle: {
                     top: 0
                 }
@@ -120,12 +135,13 @@
                 this.$store.dispatch('logout')
             },
             onScroll(e) {
-                this.top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-                if (this.top > 0) {
-                    this.headerStyle.top = -1 * Math.min(this.bannerHeight, this.top) + 'px'
+                this.scrollDownFromTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+                if (this.scrollDownFromTop > 0) {
+                    this.headerStyle.top = -1 * Math.min(this.bannerHeight, this.scrollDownFromTop) + 'px'
                 } else {
                     this.headerStyle.top = 0
                 }
+                this.isScrolled = this.scrollDownFromTop > this.bannerHeight
             },
             onResize() {
                 let tagBanner = document.querySelector('.top-banner')
