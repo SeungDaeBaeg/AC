@@ -44,6 +44,8 @@ router.beforeEach((to, from, next) => {
 
 Vue.use(VueScrollBehavior, router);
 
+Vue.component('lp-image', () => import('./components/image.vue'));
+
 new Vue({
     i18n,
     router,

@@ -34,11 +34,13 @@
 <script>
 import AcHeader from './components/header.vue';
 import AcFooter from './components/footer.vue';
+import AcImage from './components/image.vue';
 
 export default {
     components: {
         'ac-header': AcHeader,
-        'ac-footer': AcFooter
+        'ac-footer': AcFooter,
+        'ac-image': AcImage
     },
     mounted() {
         this.$Progress.finish();

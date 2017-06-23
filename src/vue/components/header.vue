@@ -32,8 +32,13 @@
         <div class="container">
             <el-row class="top-banner">
                 <el-col :span="24" v-if="topBanner">
-                    <a href="topBanner.targetUrl">
-                        <img :src="topBanner.imageForPc" class="img-fluid" @load="onResize()">
+                    <a :href="topBanner.targetUrl">
+                        <lp-image
+                                class="img-fluid"
+                                v-on:loaded="onResize"
+                                :pc="topBanner.imageForPc"
+                                :mobile="topBanner.imageForMobile">
+                        </lp-image>
                     </a>
                 </el-col>
                 <el-col :span="24" class="top-line" v-if="!topBanner"></el-col>
@@ -58,7 +63,6 @@
                 </el-col>
                 <el-col :span="6"></el-col>
             </el-row>
-            <div class="position">{{ scrollDownFromTop }}</div>
         </div>
     </header>
 </template>
@@ -99,14 +103,6 @@
             text-align: center;
         }
     }
-
-    .position {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 40px;
-        height: 40px;
-    }
 </style>
 
 
@@ -118,7 +114,7 @@
                 topBanner: {
                     imageForPc: '/images/top_banner_pc.png',
                     imageForMobile: '/images/top_banner_mobile.png',
-                    targetUrl: ''
+                    targetUrl: '//www.linkprice.com'
                 },
                 newMailCount: 30,
                 headerHeight: 200,
@@ -150,6 +146,11 @@
                 let tagContent = document.querySelector('#content')
                 this.headerHeight = tagHeader.offsetHeight | tagHeader.clientHeight
                 tagContent.style.marginTop = this.headerHeight + 24 + 'px'
+                console.log('bannerHeight: ' + this.bannerHeight)
+            },
+            onLoad() {
+                console.log('onLoad')
+                this.onResize()
             }
         },
         computed: {
