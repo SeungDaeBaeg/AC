@@ -15,7 +15,7 @@
 
 
 /********************
- * 나눔바른고딕
+ * 나눔바른고딕: 보통
  */
 @font-face {
     font-family: 'NanumBarunGothic';
@@ -30,6 +30,12 @@
          url(/fonts/NanumBarunGothic.ttf) format('truetype');
 }
 
+
+
+
+/********************
+ * 나눔바른고딕: 볼드
+ */
 @font-face {
     font-family: 'NanumBarunGothic';
     font-style: normal;
@@ -43,15 +49,3 @@
          url(/fonts/NanumBarunGothicBold.ttf) format('truetype');
 }
 
-
-.font-title {
-    font-family: 'NanumSquare', serif;
-}
-
-.font-normal {
-    font-family: 'NanumBarunGothic', sans-serif;
-}
-
-body {
-    font-family: 'NanumBarunGothic', sans-serif;
-}

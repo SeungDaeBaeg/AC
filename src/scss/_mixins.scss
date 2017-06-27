@@ -1,0 +1,111 @@
+// 이 파일은 mixin만 저장합니다.
+// mixin은 sass에서 함수와 같은 역할을 한다고 보면 됩니다.
+@import 'variables';
+
+
+
+/********************
+ * 폰트를 위한 믹스인
+ */
+@mixin mix-fonts($fFamily: $font-family-normal, $fSize: $font-size-md, $fColor: 'white', $fWeight: 400, $fHeight: 1.5) {
+    font-family: $fFamily;
+    font-size: $fSize;
+    color: $fColor;
+    font-weight: $fWeight;
+    line-height: $fHeight;
+}
+
+
+
+/********************
+ * Padding을 위한 믹스인
+ */
+@mixin mix-padding($px) {
+    %p-a-#{$px} {
+        padding: $px + px;
+    }
+    %p-t-#{$px} {
+        padding-top:  $px + px;
+    }
+    %p-b-#{$px} {
+        padding-bottom:  $px + px;
+    }
+    %p-l-#{$px} {
+        padding-left:  $px + px;
+    }
+    %p-r-#{$px} {
+        padding-right:  $px + px;
+    }
+    %p-x-#{$px} {
+        padding-left:  $px + px;
+        padding-right:  $px + px;
+    }
+    %p-y-#{$px} {
+        padding-top:  $px + px;
+        padding-bottom:  $px + px;
+    }
+}
+
+
+
+
+/********************
+ * Margin을 위한 믹스인
+ */
+@mixin mix-margin($px) {
+    %m-a-#{$px} {
+        margin: $px + px;
+    }
+    %m-t-#{$px} {
+        margin-top:  $px + px;
+    }
+    %m-b-#{$px} {
+        margin-bottom:  $px + px;
+    }
+    %m-l-#{$px} {
+        margin-left:  $px + px;
+    }
+    %m-r-#{$px} {
+        margin-right:  $px + px;
+    }
+    %m-x-#{$px} {
+        margin-left:  $px + px;
+        margin-right:  $px + px;
+    }
+    %m-y-#{$px} {
+        margin-top:  $px + px;
+        margin-bottom:  $px + px;
+    }
+}
+
+
+
+
+/********************
+ * Border를 위한 믹스인
+ */
+@mixin mix-border($bName, $bColor: $color-white-gray, $bWidth: 1, $bStyle: solid) {
+    %b-a-#{$bName} {
+        border: $bWidth+px $bStyle $bColor;
+    }
+    %b-t-#{$bName} {
+        border-top: $bWidth+px $bStyle $bColor;
+    }
+    %b-b-#{$bName} {
+        border-bottom: $bWidth+px $bStyle $bColor;
+    }
+    %b-l-#{$bName} {
+        border-left: $bWidth+px $bStyle $bColor;
+    }
+    %b-r-#{$bName} {
+        border-right: $bWidth+px $bStyle $bColor;
+    }
+    %b-x-#{$bName} {
+        border-left: $bWidth+px $bStyle $bColor;
+        border-right: $bWidth+px $bStyle $bColor;
+    }
+    %b-y-#{$bName} {
+        border-top: $bWidth+px $bStyle $bColor;
+        border-bottom: $bWidth+px $bStyle $bColor;
+    }
+}

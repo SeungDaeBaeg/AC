@@ -18,14 +18,15 @@
     @import '../scss/normalize';
     @import '../scss/container';
     @import '../scss/fonts';
+    @import '../scss/placeholders';
     @import '../scss/common';
+
+    body {
+        @extend %font-body;
+    }
 
     #app {
         margin-top: 0;
-    }
-
-    #content {
-        background-color: #f5f5f5;
     }
 </style>
 

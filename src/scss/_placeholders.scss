@@ -1,0 +1,56 @@
+// 이 파일에는 sass의 placeholder만 저장합니다.
+@import 'mixins';
+
+
+
+/********************
+ * Fonts
+ */
+%font-title-big {
+    @include mix-fonts($font-family-title, $font-size-xl, $color-white, $font-weight-bold)
+}
+
+%font-title-main {
+    @include mix-fonts($font-family-title, $font-size-lg, $color-main, $font-weight-bold)
+}
+
+%font-title-black {
+    @include mix-fonts($font-family-title, $font-size-lg, $color-black, $font-weight-bold)
+}
+
+%font-body {
+    @include mix-fonts($font-family-normal, $font-size-md, $color-black)
+}
+
+%font-sub {
+    @include mix-fonts($font-family-normal, $font-size-sm, $color-gray)
+}
+
+
+
+/********************
+ * Padding
+ */
+@include mix-padding($size-zero)
+@include mix-padding($size-sm)
+@include mix-padding($size-md)
+@include mix-padding($size-lg)
+
+
+
+/********************
+ * Margin
+ */
+@include mix-margin($size-zero)
+@include mix-margin($size-sm)
+@include mix-margin($size-md)
+@include mix-margin($size-lg)
+
+
+
+/********************
+ * Border
+ */
+@include mix-border('normal', $color-white-gray)
+@include mix-border('main', $color-main)
+@include mix-border('zero', transparent, 0)

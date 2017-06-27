@@ -1,3 +1,15 @@
+// 이 파일은 common css만 저장합니다.
+// 예를 들어 a 태그에 대한 정의를 포함하는데, a 태그는 특정 view나 component가 아닌 여기 저기에서 불립니다.
+// 이러한 css 정의는 이 파일에서 하게 됩니다.
+
+
+a {
+    &, &:active, &:hover, &:focus, &:visited {
+        text-decoration: none;
+        color: $color-gray;
+    }
+}
+
 .img-fluid {
     max-width: 100%;
     height: auto;
