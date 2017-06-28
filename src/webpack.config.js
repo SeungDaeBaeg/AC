@@ -44,7 +44,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {from: 'index.html'},
-            {from: 'node_modules/element-ui/lib/theme-default/index.css', to:'css/element.css'}
+            {from: 'theme/index.css', to:'css/element.css'}
         ])
     ],
     resolve: {

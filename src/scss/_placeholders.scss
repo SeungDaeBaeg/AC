@@ -54,3 +54,42 @@
 @include mix-border('normal', $color-white-gray)
 @include mix-border('main', $color-main)
 @include mix-border('zero', transparent, 0)
+
+
+
+
+/********************
+ * Responsive Visiblity
+ */
+// 핸드폰 에서 숨김처리
+%hidden-xs-down {
+    @media (min-width: 767px) {
+        display: none !important;
+    }
+}
+
+// 핸드폰, 태블릿 에서 숨김 처리
+%hidden-sm-down {
+    @media (min-width: 991px) {
+        display: none !important;
+    }
+}
+
+// 태블릿, PC 에서 숨김 처리 ==> 핸드폰에서만 보임
+%hidden-sm-up {
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+// PC에서 숨김 처리
+%hidden-md-up {
+    @media (max-width: 992px) {
+        display: none !important;
+    }
+}
+
+
+/********************
+ * Text Alignment
+ */

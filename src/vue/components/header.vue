@@ -95,6 +95,7 @@
         position: fixed;
         margin: auto;
         width: 100%;
+        z-index: $zindex-navbar;
         background-color: white;
         .top-banner {
             background-color: $color-top-banner;

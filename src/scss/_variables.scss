@@ -4,43 +4,64 @@
 /********************
  * Font
  */
-$font-family-title: 'NanumSquare', serif;;
-$font-family-normal: 'NanumBarunGothic', sans-serif;
+$font-family-title:             'NanumSquare', serif;;
+$font-family-normal:            'NanumBarunGothic', sans-serif;
 
-$font-size-xl: 20px;
-$font-size-lg: 18px;
-$font-size-md: 16px;
-$font-size-sm: 14px;
-$font-size-xs: 12px;
+$font-size-xl:                  20px;
+$font-size-lg:                  18px;
+$font-size-md:                  16px;
+$font-size-sm:                  14px;
+$font-size-xs:                  12px;
 
-$font-weight-normal: 400;
-$font-weight-bold: 700;
+$font-weight-normal:            400;
+$font-weight-bold:              700;
+
+$font-default-line-height:      1.5;
 
 
 
 /********************
  * Color
  */
-$color-main: #4b8fcc;
-$color-sub: #333;
+$color-main:                    #4b8fcc;
+$color-primary:                 $color-main;
 
-$color-dark-gray: #333;
-$color-gray: #666;
-$color-light-gray: #999;
-$color-white-gray: #ddd;
+$color-dark-gray:               #333;
+$color-gray:                    #666;
+$color-light-gray:              #999;
+$color-white-gray:              #ddd;
 
-$color-white: white;
-$color-black: black;
-$color-red: red;
+$color-white:                   white;
+$color-black:                   black;
+$color-red:                     red;
 
-$color-top-banner: #616477;
+$color-top-banner:              #616477;
 
 
 
 /********************
- * Sizing
+ * Sizing: 단위 px
  */
-$size-zero: 0;
-$size-sm: 4;
-$size-md: 8;
-$size-lg: 16;
+$size-zero:                     0;
+$size-sm:                       4;
+$size-md:                       8;
+$size-lg:                       16;
+
+
+
+/********************
+ * Z-Index
+ */
+$zindex-navbar:                 1000;
+$zindex-dropdown:               1000;
+$zindex-modal-background:       2000;
+$zindex-modal:                  2100;
+$zindex-tooltop:                3000;
+$zindex-popover:                3100;
+
+
+
+/********************
+ * Cursor
+ */
+$cursor-disabled:                not-allowed !default;
