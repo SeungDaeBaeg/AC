@@ -5,14 +5,16 @@
             "en": "English",
             "about-us": "회사소개",
             "privacy": "개인정보보호정책",
-            "agreement": "이용약관"
+            "agreement": "이용약관",
+            "patners": "협력업체"
         },
         "en": {
             "ko": "한국어",
             "en": "영어",
             "about-us": "About Us",
             "privacy": "Privacy",
-            "agreement": "Agreement"
+            "agreement": "Agreement",
+            "patners": "Partners"
         }
     }
 </i18n>
@@ -26,6 +28,7 @@
                 <li><a href="//www.linkprice.com/home/linkprice0601.htm">{{ $t('about-us') }}</a></li>
                 <li><a href="//www.linkprice.com/home/linkprice0703.htm">{{ $t('privacy') }}</a></li>
                 <li><a href="//www.linkprice.com/home/linkprice0704.htm">{{ $t('agreement') }}</a></li>
+                <li><a href="//www.linkprice.com/home/linkprice0704.htm">{{ $t('patners') }}</a></li>
             </ul>
             <ul>
                 <li><a href="" @click.prevent="setLang('ko')">{{ $t('ko') }}</a></li>
