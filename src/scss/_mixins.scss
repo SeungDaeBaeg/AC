@@ -109,3 +109,13 @@
         border-bottom: $bWidth+px $bStyle $bColor;
     }
 }
+
+@mixin navar-list{
+    float: left;
+    padding: 0;
+    width: 50%;
+    line-height:40px;
+    font-size: 12px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+}
